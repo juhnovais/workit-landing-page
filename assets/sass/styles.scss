@@ -1,0 +1,420 @@
+// Mixins
+@mixin fonts($family, $size, $weight, $lineSpacing) {
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $lineSpacing;
+}
+
+// Colors
+$darkPurple: #24053E;
+$eucaplyptus: #44FFA1;
+$davisGrey: #584D62;
+$ghostWhite: #FCF8FF;
+$white: #ffffff;
+
+
+
+body {
+    @include fonts(('Manrope', sans-serif), 18px, 400, 32px);
+    color: $darkPurple;
+
+    h1 {
+        @include fonts(('Fraunces', serif), 50px, 600, 50px);
+        margin: 0;
+        text-align: center;
+        color: $white;
+    }
+
+    h2 {
+        @include fonts(('Fraunces', serif), 28px, 600, 128.571%);
+        margin: 0;
+        color: $darkPurple;
+    }
+
+    h3 {
+        @include fonts(('Fraunces', serif), 32px, 600, 40px);
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .secondary {
+        color: $white;
+        @include fonts(Manrope, 16px, 700, 100%);
+        letter-spacing: -0.16px;
+        border-bottom: 3px solid $eucaplyptus;
+        padding-bottom: 3px;
+        text-decoration: none;
+        transition-delay: 0.2s;
+
+        &:hover {
+            color: $eucaplyptus;
+        }
+    }
+
+    .underlined {
+        border-bottom: 3px solid $eucaplyptus;
+    }
+
+    button {
+        background-color: $eucaplyptus !important;
+        margin-top: 40px;
+
+        &.primary {
+            @include fonts(Manrope, 16px, 700, 200%);
+            color: $darkPurple;
+            text-align: center;
+            letter-spacing: -0.16px;
+            padding-left: 24px;
+            padding-right: 24px;
+            border-radius: 0;
+            transition-delay: 0.2s;
+            border: 2px solid $eucaplyptus;
+
+            &:hover {
+                color: $eucaplyptus;
+                border: 2px solid $eucaplyptus;
+                background-color: transparent !important;
+            }
+
+        }
+    }
+
+    .wrap {
+        overflow: hidden;
+        padding-bottom: 170px;
+        position: relative;
+        z-index: 100;
+
+        @media (min-width: 768px) {
+            padding-bottom: 203px;
+        }
+
+        @media (min-width: 992px) {
+            padding-bottom: 326px;
+        }
+    }
+
+    .feat {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+
+        p {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30.5px;
+            border: 1px solid $davisGrey;
+            color: $darkPurple;
+            @include fonts(Fraunces, 20px, 600, 180%)
+        }
+    }
+
+    .bg-patterns {
+        position: absolute;
+        z-index: 999;
+        width: auto;
+        height: 100%;
+        display: none !important;
+        margin-left: -130px;
+
+        @media (min-width: 768px) {
+            display: flex !important;
+        }
+
+        img {
+            display: flex;
+            flex-direction: column;
+
+
+
+            &.bg-p1 {
+                max-width: 270px;
+                align-self: center;
+
+                @media (min-width: 992px) {
+                    align-self: start;
+                    margin-top: 100px;
+                }
+            }
+
+        }
+
+
+    }
+
+    .bg2-patterns {
+        position: absolute;
+        z-index: 999;
+        width: auto;
+        height: 100%;
+        display: none !important;
+        right: -60px;
+
+        @media (min-width: 768px) {
+            display: flex !important;
+        }
+
+        img {
+            display: flex;
+            flex-direction: column;
+
+
+            &.bg-p2 {
+                max-width: 140px;
+                align-self: flex-end;
+                margin-bottom: 100px;
+
+                @media (min-width: 992px) {
+                    align-self: center;
+                    margin-top: 50px;
+                }
+
+            }
+        }
+    }
+
+    .hero {
+        background-color: $darkPurple;
+        position: relative;
+
+
+        &::after {
+            content: "";
+            width: 150%;
+            height: 0;
+            padding-top: 170px;
+            border-bottom-right-radius: 100%;
+            border-bottom-left-radius: 100%;
+            background: $darkPurple;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            @media (min-width: 768px) {
+                width: 125%;
+                padding-top: 203px;
+            }
+
+            @media (min-width: 768px) {
+                padding-top: 326px;
+            }
+
+        }
+
+        header {
+            margin-bottom: 70px;
+            padding-top: 37px;
+
+            @media (min-width: 768px) {
+                padding-left: 39px;
+                padding-right: 39px;
+                position: relative;
+                z-index: 9999;
+            }
+
+            .logo {
+                max-height: 25px;
+                width: auto;
+            }
+        }
+
+
+    }
+
+    .bgImage {
+        position: relative;
+        margin-top: -90px;
+        z-index: 999;
+
+        @media (min-width: 768px) {
+            margin-top: -140px;
+        }
+
+        @media (min-width: 992px) {
+            margin-top: -250px;
+        }
+
+        img {
+            width: 70%;
+
+            @media (min-width: 992px) {
+                width: 667px;
+            }
+        }
+    }
+
+
+    .featSectionWrap {
+        margin-top: -110px;
+        position: relative;
+        z-index: 0;
+
+        @media (min-width: 768px) {
+            margin-top: -190px;
+        }
+
+        &.wrap {
+            padding-bottom: 70px;
+
+            @media (min-width: 768px) {
+                padding-bottom: 103px;
+            }
+
+            @media (min-width: 992px) {
+                padding-bottom: 125px;
+            }
+        }
+
+        .featSection {
+            text-align: center;
+            padding-top: 155px;
+            background-color: $ghostWhite;
+            position: relative;
+
+            @media (min-width: 768px) {
+                padding-top: 235px;
+            }
+
+
+            &::after {
+                content: "";
+                width: 150%;
+                height: 0;
+                padding-top: 70px;
+                border-bottom-right-radius: 100%;
+                border-bottom-left-radius: 100%;
+                background: $ghostWhite;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+
+                @media (min-width: 768px) {
+                    width: 125%;
+                    padding-top: 103px;
+                }
+
+                @media (min-width: 992px) {
+                    width: 110%;
+                    padding-top: 125px;
+                }
+
+            }
+
+            .featContent {
+                @media (min-width: 768px) {
+                    text-align: left;
+
+                }
+
+                @media (min-width: 992px) {
+                    text-align: center;
+                }
+
+                p {
+                    @include fonts(Manrope, 16px, 400, 175%);
+                    color: $davisGrey;
+                    margin-top: 16px;
+                }
+
+            }
+
+        }
+    }
+
+    .founder {
+        padding-top: 100px;
+
+        @media (min-width: 768px) {
+            margin-top: 200px;
+        }
+
+        .founder-col {
+            position: relative;
+            margin-top: -32px;
+
+        }
+            img {
+                width: 80%;
+
+                @media (min-width: 768px) {
+                    height: auto;
+                    width: 150%;
+                    position: absolute;
+                    left: 0;
+                    top: -70%;
+                }
+
+                @media (min-width: 992px) {
+                    width: 130%;
+                    top: -100%;
+                }
+            }
+
+            .founderContent {
+                background-color: $darkPurple;
+                padding: 32px 30px;
+                color: $white;
+                text-align: center;
+                position: relative;
+                margin-top: -80px;
+
+                h2 {
+                    @include fonts(Fraunces, 32px, 600, 150%);
+                    color: $white;
+                }
+
+                p {
+                    @include fonts(Manrope, 16px, 400, 175%);
+                }
+            }
+        
+    }
+
+    .bg-founderPatterns {
+        position: relative;
+        display: none !important;
+
+        img {
+            width: 173px;
+            position: absolute;
+            display: flex !important;
+            margin-top: -70px;
+            margin-right: 60px;
+
+        }
+    }
+
+    footer {
+        padding: 74px 0;
+
+        .logo {
+            img {
+                width: auto;
+                max-height: 25px;
+                margin-bottom: 58px;
+            }
+        }
+
+        .social {
+            img {
+                width: auto;
+                max-height: 20px;
+            }
+        }
+    }
+}
